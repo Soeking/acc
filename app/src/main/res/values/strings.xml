@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Dan</string>
+    <string name="button_start">START</string>
+    <string name="button_retry" />
+    <string name="retry">RETRY</string>
+    <string name="gameover_text">GAME OVER</string>
+    <string name="clear">CLEAR</string>
+    <string name="back_button">BACK TO TOP</string>
+</resources>
