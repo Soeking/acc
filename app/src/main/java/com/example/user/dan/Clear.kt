@@ -18,7 +18,7 @@ class Clear : AppCompatActivity() {
     }
 
     fun backTap(view: View?){
-        val intent = Intent(this,Start::class.java)
+        val intent = Intent(this,MainActivity::class.java)
         startActivity(intent)
     }
 }

@@ -18,7 +18,7 @@ class Gameover : AppCompatActivity() {
     }
 
     fun retryTap(view: View?){
-        val intent = Intent(this,MainActivity::class.java)
+        val intent = Intent(this,Start::class.java)
         startActivity(intent)
     }
 }
