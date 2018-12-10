@@ -9,8 +9,6 @@ import kotlinx.android.synthetic.main.activity_gameover.*
 
 class Gameover : AppCompatActivity() {
 
-    //private val score=intent.getIntExtra("SCORE",0)
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestedOrientation= ActivityInfo.SCREEN_ORIENTATION_PORTRAIT

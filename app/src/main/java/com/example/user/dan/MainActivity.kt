@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity(), SensorEventListener, SurfaceHolder.Cal
 
     private var surfaceWidth:Int=0
     private var surfaceHeight:Int=0
-    //private var score=intent.getIntExtra("SCORE",0)
 
     private val radius=20.0f
     private val coef=1000.0f
@@ -67,7 +66,6 @@ class MainActivity : AppCompatActivity(), SensorEventListener, SurfaceHolder.Cal
         setContentView(R.layout.activity_main)
         val holder=surfaceView.holder
         holder.addCallback(this)
-         //val score=intent.getIntExtra("SCORE",0)
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
@@ -223,12 +221,12 @@ class MainActivity : AppCompatActivity(), SensorEventListener, SurfaceHolder.Cal
         y3=(height/4+Math.random()*100-50).toFloat()
         x4=(width/7*2+Math.random()*100-50).toFloat()
         y4=(height/5+Math.random()*100-50).toFloat()
-        cx1=150f
-        cy1=200f
-        cx2=500f
-        cy2=600f
-        cx3=750f
-        cy3=1550f
+        cx1=(Math.random()*width*3/4.0+150).toFloat()
+        cy1=(Math.random()*height/4.0+50).toFloat()
+        cx2=(Math.random()*width*3/4.0+150).toFloat()
+        cy2=(Math.random()*height*3/5.0+400).toFloat()
+        cx3=(Math.random()*width*3/4.0+150).toFloat()
+        cy3=(Math.random()*height*2/5.0+1000).toFloat()
     }
 
     override fun surfaceDestroyed(holder:SurfaceHolder?){
