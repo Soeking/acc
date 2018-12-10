@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity(), SensorEventListener, SurfaceHolder.Cal
 
     private var surfaceWidth:Int=0
     private var surfaceHeight:Int=0
+    //private var score=intent.getIntExtra("SCORE",0)
+
     private val radius=20.0f
     private val coef=1000.0f
     private var ballX:Float=0f
@@ -65,6 +67,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener, SurfaceHolder.Cal
         setContentView(R.layout.activity_main)
         val holder=surfaceView.holder
         holder.addCallback(this)
+         //val score=intent.getIntExtra("SCORE",0)
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
@@ -178,19 +181,19 @@ class MainActivity : AppCompatActivity(), SensorEventListener, SurfaceHolder.Cal
             if((ballX-cx1)*(ballX-cx1)+(ballY-cy1)*(ballY-cy1)<(radius+cr1)*(radius+cr1)){
                 cx1=-20f
                 cy1=-20f
-                count=count+1
+                count+=1
                 if(count==3){clear()}
             }
             else if((ballX-cx2)*(ballX-cx2)+(ballY-cy2)*(ballY-cy2)<(radius+cr2)*(radius+cr2)){
                 cx2=-20f
                 cy2=-20f
-                count=count+1
+                count+=1
                 if(count==3){clear()}
             }
             else if((ballX-cx3)*(ballX-cx3)+(ballY-cy3)*(ballY-cy3)<(radius+cr3)*(radius+cr3)){
                 cx3=-20f
                 cy3=-20f
-                count=count+1
+                count+=1
                 if(count==3){clear()}
             }
             if((ballX-x1)*(ballX-x1)+(ballY-y1)*(ballY-y1)<(radius+r1)*(radius+r1)){gameOver()}
@@ -247,13 +250,18 @@ class MainActivity : AppCompatActivity(), SensorEventListener, SurfaceHolder.Cal
         surfaceView.holder.unlockCanvasAndPost(canvas)
     }
 
-    fun gameOver(){
+    private fun gameOver(){
         val intent = Intent(this,Gameover::class.java)
+        val score =intent.getIntExtra("SCORE",0)
+        intent.putExtra("SCORE",score)
         startActivity(intent)
     }
 
     fun clear(){
         val intent =Intent(this,Clear::class.java)
+        var score =intent.getIntExtra("SCORE",0)
+        score++
+        intent.putExtra("SCORE",score)
         startActivity(intent)
     }
 }

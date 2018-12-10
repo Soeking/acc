@@ -10,6 +10,8 @@ import kotlinx.android.synthetic.main.activity_start.*
 
 class Start : AppCompatActivity() {
 
+    private val score=0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestedOrientation= ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
@@ -18,8 +20,9 @@ class Start : AppCompatActivity() {
          startButton.setOnClickListener{startTap(it)}
     }
 
-    fun startTap(view: View?){
+    private fun startTap(view: View?){
         val intent = Intent(this,MainActivity::class.java)
+        intent.putExtra("SCORE",score)
         startActivity(intent)
     }
 }

@@ -9,16 +9,23 @@ import kotlinx.android.synthetic.main.activity_gameover.*
 
 class Gameover : AppCompatActivity() {
 
+    //private val score=intent.getIntExtra("SCORE",0)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestedOrientation= ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         setContentView(R.layout.activity_gameover)
 
+        val score=intent.getIntExtra("SCORE",0)
+        scoreBoard.text="$score"
+
         retryButton.setOnClickListener{retryTap(it)}
     }
 
-    fun retryTap(view: View?){
+    private fun retryTap(view: View?){
         val intent = Intent(this,Start::class.java)
+        val score=intent.getIntExtra("SCORE",0)
+        intent.putExtra("SCORE",score)
         startActivity(intent)
     }
 }
