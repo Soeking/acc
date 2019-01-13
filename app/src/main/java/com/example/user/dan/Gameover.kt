@@ -17,10 +17,10 @@ class Gameover : AppCompatActivity() {
         val score=intent.getIntExtra("SCORE",0)
         scoreBoard.text="$score"
 
-        retryButton.setOnClickListener{retryTap(it)}
+        retryButton.setOnClickListener{retryTap()}
     }
 
-    private fun retryTap(view: View?){
+    private fun retryTap(){
         val intent = Intent(this,Start::class.java)
         val score=intent.getIntExtra("SCORE",0)
         intent.putExtra("SCORE",score)

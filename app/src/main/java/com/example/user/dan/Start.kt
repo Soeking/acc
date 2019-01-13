@@ -17,10 +17,10 @@ class Start : AppCompatActivity() {
         requestedOrientation= ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         setContentView(R.layout.activity_start)
 
-         startButton.setOnClickListener{startTap(it)}
+         startButton.setOnClickListener{startTap()}
     }
 
-    private fun startTap(view: View?){
+    private fun startTap(){
         val intent = Intent(this,MainActivity::class.java)
         intent.putExtra("SCORE",score)
         startActivity(intent)

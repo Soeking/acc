@@ -17,10 +17,10 @@ class Clear : AppCompatActivity() {
         val score=intent.getIntExtra("SCORE",0)
         scoreBoard.text="$score"
 
-        back.setOnClickListener{backTap(it)}
+        back.setOnClickListener{backTap()}
     }
 
-    private fun backTap(view: View?){
+    private fun backTap(){
         val intent = Intent(this,MainActivity::class.java)
         val score=intent.getIntExtra("SCORE",1)
         intent.putExtra("SCORE",score)
