@@ -250,16 +250,11 @@ class MainActivity : AppCompatActivity(), SensorEventListener, SurfaceHolder.Cal
 
     private fun gameOver(){
         val intent = Intent(this,Gameover::class.java)
-        val score =intent.getIntExtra("SCORE",0)
-        intent.putExtra("SCORE",score)
         startActivity(intent)
     }
 
-    fun clear(){
+    private fun clear(){
         val intent =Intent(this,Clear::class.java)
-        var score =intent.getIntExtra("SCORE",0)
-        score++
-        intent.putExtra("SCORE",score)
         startActivity(intent)
     }
 }

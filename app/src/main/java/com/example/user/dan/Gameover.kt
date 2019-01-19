@@ -14,7 +14,6 @@ class Gameover : AppCompatActivity() {
         requestedOrientation= ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         setContentView(R.layout.activity_gameover)
 
-        val score=intent.getIntExtra("SCORE",0)
         scoreBoard.text="$score"
 
         retryButton.setOnClickListener{retryTap()}
@@ -22,8 +21,6 @@ class Gameover : AppCompatActivity() {
 
     private fun retryTap(){
         val intent = Intent(this,Start::class.java)
-        val score=intent.getIntExtra("SCORE",0)
-        intent.putExtra("SCORE",score)
         startActivity(intent)
     }
 }

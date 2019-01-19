@@ -14,7 +14,7 @@ class Clear : AppCompatActivity() {
         requestedOrientation= ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         setContentView(R.layout.activity_clear)
 
-        val score=intent.getIntExtra("SCORE",0)
+        score++
         scoreBoard.text="$score"
 
         back.setOnClickListener{backTap()}
@@ -22,8 +22,6 @@ class Clear : AppCompatActivity() {
 
     private fun backTap(){
         val intent = Intent(this,MainActivity::class.java)
-        val score=intent.getIntExtra("SCORE",1)
-        intent.putExtra("SCORE",score)
         startActivity(intent)
     }
 }
